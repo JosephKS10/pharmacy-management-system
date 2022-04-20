@@ -7,6 +7,7 @@ var cors = require('cors');
 const loginRoute = require('./api/routes/login');
 const medicineRoute = require('./api/routes/Medicine');
 const alternateRoute = require('./api/routes/Alternate');
+const supplierRoute = require('./api/routes/Supplier');
 
 
 mongoose.connect('mongodb+srv://joseph:7371@cluster0.hzsfm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
@@ -31,6 +32,7 @@ app.use(cors())
 app.use('/login', loginRoute)
 app.use('/medicine', medicineRoute)
 app.use('/alternate',alternateRoute)
+app.use('/supplier', supplierRoute)
 
 
 // for error handling (bad url request)

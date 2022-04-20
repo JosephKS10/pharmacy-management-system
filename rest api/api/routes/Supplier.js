@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Alternate = require('../model/alternate');
+const Supplier = require('../model/supplier');
 
-// getting all the data from the database(mongoBD) || Read method applied here for all the values
+// getting all the data from the database(mongoBD) || Read method applied here for all the values of supplier table
 router.get('/',(req,res,next)=>{
-    Alternate.find()
+    Supplier.find()
     .then(result=>{
         res.status(200).json({
-            alt_medicine_data: result
+            supplier_data: result
         })
     })
     .catch(err=>{
@@ -18,13 +18,13 @@ router.get('/',(req,res,next)=>{
     })
 })
 
-// Read method applied here for a specific record in the database
+// Read method applied here for a specific record in the supplier database
 router.get('/:id',(req,res,next)=>{
-    console.log("The id required for the particular medicine alternative: "+req.params.id);
-    Alternate.findById(req.params.id)
+    console.log("The id required for the particular supplier detail: "+req.params.id);
+    Supplier.findById(req.params.id)
     .then(result=>{
         res.status(200).json({
-            alt_medicine_data_specific: result
+            supplier_data_specific: result
         })
     })
     .catch(err=>{
@@ -36,23 +36,21 @@ router.get('/:id',(req,res,next)=>{
 })
 
 // ( Post Method) getting data from the front end and then saving in the database(mongoDB) || Create method applied here
-// alternate medicine record creation occurs due to this post method
-router.post('/med_create',(req,res,next)=>{
-    const alt_medicine = new Alternate({
-    pre_medicine_name: req.body.pre_medicine_name,
+// Supplier record creation occurs due to this post method
+router.post('/supplier_create',(req,res,next)=>{
+    const supplier = new Supplier({
     medicine_name: req.body.medicine_name,
-    storage_id: req.body.storage_id,
-    price: req.body.price,
-    stock: req.body.stock,
-    manu_info: req.body.manu_info,
-    date_of_expiry: req.body.date_of_expiry
+    supplier_name: req.body.supplier_name,
+    phone_number: req.body.phone_number,
+    email: req.body.email,
+    address: req.body.address
     })
 
-    alt_medicine.save()
+    supplier.save()
     .then(result=>{
         console.log(result);
         res.status(200).json({
-            alt_new_medicine: result
+            supplier_info: result
         })
     })
     .catch(err=>{
@@ -64,13 +62,14 @@ router.post('/med_create',(req,res,next)=>{
 
 })
 
-// deleting data from the database || Delete method applied here
+
+// deleting data from the supplier database || Delete method applied here
 router.delete('/:id',(req,res,next)=>{
-    console.log("The alternate medicine id required: "+req.params.id);
+    console.log("The supplier id required: "+req.params.id);
     Alternate.deleteOne({_id:req.params.id})
     .then(result=>{
         res.status(200).json({
-            message: "the alternate medicine record has been deleted from the database",
+            message: "the supplier record has been deleted from the database",
             deleted_data: result
         })
     })
@@ -84,21 +83,19 @@ router.delete('/:id',(req,res,next)=>{
 
 // Updating the values in the medicine records of the database ( PUT request ) || Update method applied here
 router.put('/:id',(req,res,next)=>{
-    console.log("The Alternate id required: "+req.params.id);
-    Alternate.findOneAndUpdate({_id:req.params.id}, {
+    console.log("The supplier id required: "+req.params.id);
+    Supplier.findOneAndUpdate({_id:req.params.id}, {
         $set:{
-            pre_medicine_name: req.body.pre_medicine_name,
             medicine_name: req.body.medicine_name,
-            storage_id: req.body.storage_id,
-            price: req.body.price,
-            stock: req.body.stock,
-            manu_info: req.body.manu_info,
-            date_of_expiry: req.body.date_of_expiry
+            supplier_name: req.body.supplier_name,
+            phone_number: req.body.phone_number,
+            email: req.body.email,
+            address: req.body.address
         }
     })
     .then(result=>{
         res.status(200).json({
-            updated_alt_medicine_result: result
+            updated_supplier_info_result: result
         })
     })
     .catch(err=>{
@@ -108,6 +105,5 @@ router.put('/:id',(req,res,next)=>{
         })
     })
 })
-
 
 module.exports = router;
