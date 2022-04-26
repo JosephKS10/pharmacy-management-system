@@ -1,53 +1,44 @@
-import React from 'react';
-import "./CreateModal.css";
-import axios from 'axios';
+import React from 'react'
+import "./AltModal.css"
 import useCreateHook from './hooks/useCreateHook';
+import axios from 'axios';
 
 
 
-function CreateModal({closeCreateModal, proceedCreateModel, getmedicineName}) {
-
-  const api = axios.create({
-    baseURL: 'http://localhost:9000/medicine'
-  })
-
-const medicine_submit = () => {
-  alert(`Medicine Entry Created!
-        Medicine Name: ${inputs.medicine_name}
+function AltModal({closeAltModal, putMedicineName}) {
+    const api = axios.create({
+        baseURL: 'http://localhost:9000/alternate'
+      })
+    const alt_medicine_submit = () => {
+        alert(`Alternate Medicine Entry Created!
+        Medicine Name: ${putMedicineName}
+        Alternative Medicine Name: ${inputs.medicine_name}
         Storage ID: ${inputs.storage_id}
         Price: ${inputs.price}
         Stock: ${inputs.stock}
         Manufacturer: ${inputs.manu_info}
         DOE: ${inputs.date_of_expiry}
-        `);
-  api.post('/med_create', {medicine_name:inputs.medicine_name, storage_id: inputs.storage_id, price:inputs.price, stock:inputs.stock, manu_info:inputs.manu_info, date_of_expiry:inputs.date_of_expiry});
-} 
+              `);
+        let res = api.post('/alt_med_create', {pre_medicine_name:putMedicineName,medicine_name:inputs.medicine_name, storage_id: inputs.storage_id, price:inputs.price, stock:inputs.stock, manu_info:inputs.manu_info, date_of_expiry:inputs.date_of_expiry});
 
-const {inputs, handleInputChange, handleSubmit} = useCreateHook(medicine_submit);
+      } 
+    const {inputs, handleInputChange, handleSubmit} = useCreateHook(alt_medicine_submit);
 
-function submit(){
-  close();
-  open();
-  medicinename();
-  handleSubmit();
-}
-function close(){
-  closeCreateModal(false);
-}
-function open(){
-  proceedCreateModel(true);
-}
-function medicinename(){
-    getmedicineName(inputs.medicine_name);
+    function submit(){
+        handleSubmit();
+        close();
+    }
+    function close(){
+        closeAltModal(false)
+    }
 
-}
-return (
+  return (
     <div className='modalBackground'>
     <div className="modalContainer">
         <div className="titleCloseBtn">
-      
-          <div className="titleCRT">
-              <h1>Medicine Details</h1>
+     
+          <div className="titleALT">
+              <h1>Alternate Medicine Details</h1>
           </div>
           <div className="body">
             <div className="name">
@@ -76,9 +67,9 @@ return (
           </div>
           </div>
 
-          <div className="footer">
-              <button className='button_modal' onClick={() => closeCreateModal(false)}  id="cancelBtn"> Cancel </button>
-              <button className='button_modal'id="createBtn" onClick={submit}> Proceed </button>
+          <div className="footer_a">
+              <button className='button_modal' onClick={close}  id="cancelBtn"> Skip </button>
+              <button className='button_modal' id="createBtn" onClick={submit}> Create </button>
           </div>
         </div>
       </div>
@@ -86,4 +77,4 @@ return (
   )
 }
 
-export default CreateModal
+export default AltModal

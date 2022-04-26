@@ -5,6 +5,7 @@ const Medicine = require('../model/medicine');
 
 // getting all the data from the database(mongoBD) || Read method applied here for all the values
 router.get('/',(req,res,next)=>{
+    console.log("Get request called")
     Medicine.find()
     .then(result=>{
         res.status(200).json({
@@ -20,8 +21,25 @@ router.get('/',(req,res,next)=>{
 })
 
 // Read method applied here for a specific record in the database
-router.get('/:name',(req,res,next)=>{
-    console.log("The name required for the particular medicine: "+req.params.name);
+router.get('/:id',(req,res,next)=>{
+    console.log("The id required for the particular medicine(get request): "+req.params.id);
+    Medicine.findById(req.params.id)
+    .then(result=>{
+        res.status(200).json({
+            medicine_data_specific: result
+        })
+    })
+    .catch(err=>{
+        console.log(err);
+        res.status(500).json({
+            error:err
+        })
+    })
+})
+
+// Read method applied here for a specific record in the database by name
+router.get('/name/:name',(req,res,next)=>{
+    console.log("The name required for the particular medicine(get request): "+req.params.name);
     Medicine.find({medicine_name:req.params.name})
     .then(result=>{
         res.status(200).json({
@@ -66,7 +84,7 @@ router.post('/med_create',(req,res,next)=>{
 
 // deleting data from the database || Delete method applied here
 router.delete('/:id',(req,res,next)=>{
-    console.log("The medicine id required: "+req.params.id);
+    console.log("The medicine id required(delete request): "+req.params.id);
     Medicine.deleteOne({_id:req.params.id})
     .then(result=>{
         res.status(200).json({
@@ -84,7 +102,7 @@ router.delete('/:id',(req,res,next)=>{
 
 // Updating the values in the medicine records of the database ( PUT request ) || Update method applied here
 router.put('/:id',(req,res,next)=>{
-    console.log("The id required: "+req.params.id);
+    console.log("The id required(update request): "+req.params.id);
     Medicine.findOneAndUpdate({_id:req.params.id}, {
         $set:{
             medicine_name: req.body.medicine_name,

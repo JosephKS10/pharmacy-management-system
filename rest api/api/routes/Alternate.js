@@ -19,9 +19,9 @@ router.get('/',(req,res,next)=>{
 })
 
 // Read method applied here for a specific record in the database
-router.get('/:id',(req,res,next)=>{
-    console.log("The id required for the particular medicine alternative: "+req.params.id);
-    Alternate.findById(req.params.id)
+router.get('/:pre_name',(req,res,next)=>{
+    console.log("The pre name required for the particular medicine alternative: "+req.params.pre_name);
+    Alternate.find({pre_medicine_name: req.params.pre_name})
     .then(result=>{
         res.status(200).json({
             alt_medicine_data_specific: result
@@ -37,7 +37,7 @@ router.get('/:id',(req,res,next)=>{
 
 // ( Post Method) getting data from the front end and then saving in the database(mongoDB) || Create method applied here
 // alternate medicine record creation occurs due to this post method
-router.post('/med_create',(req,res,next)=>{
+router.post('/alt_med_create',(req,res,next)=>{
     const alt_medicine = new Alternate({
     pre_medicine_name: req.body.pre_medicine_name,
     medicine_name: req.body.medicine_name,

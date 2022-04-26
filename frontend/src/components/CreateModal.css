@@ -1,0 +1,129 @@
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer {
+    position: relative;
+    top: -6.5%;
+    left: -2%;
+    width: 1000px;
+    height: 650px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 25px;
+  }
+  
+  .modalContainer .titleCRT {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 3%;
+    left: 32%;
+  }
+  
+  .titleCloseBtn {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .body {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+
+.label_text{
+    position: relative;
+    font-family: 'Comfortaa';
+    font-style: normal;
+    left: -7.5%;
+
+}
+  .text_field{
+    position: relative;
+    width: 600px;
+    height: 52px;
+    border: 1px solid #000000;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 37px;
+    font-family: 'Comfortaa';
+    font-style: normal;
+    padding-left: 15px;
+  }
+
+.name{
+margin-bottom: 2.5%;
+margin-left: 11%;
+}
+.storage{
+    margin-bottom: 2.5%;
+    margin-left: 5%;
+    
+}
+.price{
+    margin-bottom: 2.5%;
+    margin-left: 13%;
+}
+.stock{
+    margin-bottom: 2.5%;
+    margin-left: 12%;
+}
+.manu_info{
+    margin-bottom: 2.5%;
+    
+}
+.doe{
+    margin-bottom: 2.5%;
+    margin-left: -1%;
+}
+
+
+.modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+  }
+  
+  .modalContainer .footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }
+
+  #cancelBtn:hover{
+    background-color: rgb(255, 0, 51)
+  }
+
+  #createBtn:hover{
+    background-color: rgb(0, 85, 244)
+  }

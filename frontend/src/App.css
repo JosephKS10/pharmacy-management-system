@@ -1,153 +1,5 @@
-
-.box{
-    position: absolute;
-    width: 650px;
-    height: 650px;
-    left: 6%;
-    top:16%;
-    
-    mix-blend-mode: normal;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 5px 34px 5px #000000;
-}
-
-.background {
-    height: 50vw;
-    width: 100vw;
-}
-
-.red {
-    border: 1px solid red;
-}
-.welcome{
-position: relative;
-left: 2.5%;
-top: 2%;
-font-family: 'Comfortaa';
-font-style: normal;
-
-font-size: 40px;
-line-height: 45px;
-
-color: #3A3434;
-}
-
-.container{
-font-family: 'Comfortaa';
-font-style: normal;
-color: #3A3434;
-
-}
-.username_details{
-    position: relative;
-    width: 355px;
-    height: 52px;
-    left: 22.5%;
-    top: 40px;
-    border: 1px solid #000000;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 37px;
-    font-family: 'Comfortaa';
-    font-style: normal;
-    background-image: url(./img/user.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    padding-left: 45px;
-    background-size: 32px;
-    background-position-x: 5px;
-}
-
-.password_details{
-    position: relative;
-    width: 355px;
-    height: 52px;
-    left: 22.5%;
-    top: 48px;
-    border: 1px solid #000000;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 37px;
-    font-family: 'Comfortaa';
-    font-style: normal;
-    background-image: url(./img/pass.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    padding-left: 45px;
-    background-size: 32px;
-    background-position-x: 5px;
-
-}
-
-.login_button{
-    position: relative;
-  left: 40%;
-  top: 88px;
-  background-color: #000000;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 37px;
-  font-family: 'Comfortaa';
-  font-style: normal;
-}
-
-.login_button:hover{
-    background-color: whitesmoke;
-    color: black;
-}
-
-.container_for_logo{
-
-    position: absolute;
-    left: 41.5%;
-    top: 1.5%;
-}
-
-.logo{
-    width: 400px;
-    height: 400px;
-}
-
-.welcome2{
-    position: relative;
-    left: 85px;
-    top: -130px;
-    font-family: 'Comfortaa';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 56px;
-    line-height: 60px;
-    color: whitesmoke;
-}
-
-.request{
-    position: relative;
-    left: 85px;
-    top: -105px;
-    font-family: 'Comfortaa';
-    font-style: normal;
-    font-weight: 200;
-    font-size: 24px;
-    line-height: 30px;
-    color: #3C3434;
-}
-
-.emaillogo{
-    position: relative;
-    left: 85px;
-    top: -95px;
-    color: #000000;
-}
-
-.emaillogo:hover{
-    color: 	whitesmoke;
+body{
+    background-color: #00bfb5;
 }
 
 .container_for_bar{
@@ -164,7 +16,7 @@ color: #3A3434;
     
     }
     .home_background{
-        height: 50vw;
+        height: 100vh;
         width: 100vw;
     }
 
@@ -211,9 +63,13 @@ color: #3A3434;
     .view_button{
         position: relative;
         left: -2.5%;
+        height: 40px;
+        width: 200px;
         background: transparent;
         font-family: 'Comfortaa';
         font-style: normal;
+        font-size: larger;
+        font-weight: 700;
         color: #3A3434;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
         border-radius: 50px;
@@ -225,8 +81,12 @@ color: #3A3434;
         position: relative;
         left: 2.5%;
         background: transparent;
+        height: 40px;
+        width: 200px;
         font-family: 'Comfortaa';
         font-style: normal;
+        font-size: larger;
+        font-weight: 700;
         color: #3A3434;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
         border-radius: 50px;

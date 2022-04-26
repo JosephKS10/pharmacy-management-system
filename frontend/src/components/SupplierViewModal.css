@@ -1,0 +1,131 @@
+ 
+  .modalContainer {
+    position: fixed;
+    width: 1000px;
+    height: 650px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 25px;
+  }
+  
+  .modalContainer .titleSUP {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 3%;
+    left: 33%;
+    margin-top: 4%;
+
+  }
+  
+  .titleCloseBtn {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .body {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+.body_sup_view{
+  position: fixed;
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-size: xx-large;
+
+}
+.label_text_sup{
+    position: fixed;
+    left: 30%;
+}
+
+.sup_name{
+position: fixed;
+margin-bottom: 5%;
+left: 30%;
+}
+.sup_nam{
+  position: fixed;
+  font-weight: 700;
+  margin-left: 11%;
+
+}
+.ph_number{
+  position: fixed;
+  margin-top: 5%;
+  
+}
+.ph_num{
+  position: fixed;
+  font-weight: 700;
+  margin-left: 9.25%;
+
+}
+.email{
+  position: fixed;
+  margin-top: 10%;
+
+  
+}
+.ema{
+  position: fixed;
+  font-weight: 700;
+  margin-left: 16.1%;
+
+}
+.address{
+  position: fixed;
+  margin-top: 15%;
+
+    
+}
+.add{
+  position: fixed;
+  font-weight: 700;
+  margin-left: 7.25%;
+}
+
+
+.modalContainer .footer_sup {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+  }
+  
+  .modalContainer .footer_sup button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #cancelBtnSup {
+    background-color: crimson;
+    position: fixed;
+    margin-top: 40%;
+  }
+
+  #cancelBtnSup:hover{
+    background-color: rgb(255, 0, 51)
+  }
+

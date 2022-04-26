@@ -1,0 +1,102 @@
+.table-container {
+    position: relative;
+    left: -23.5%;
+    top: -20%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+ 
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ffffff;
+    text-align: left;
+    padding: 8px;
+    font-size: 32px;
+  }
+  
+  th {
+    background-color: rgb(7, 164, 255);
+    text-align: center;
+  }
+  
+  td {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 0.5px solid black;
+  }
+  
+  form {
+    display: flex;
+    gap: 5px;
+  }
+  
+  form td:last-child {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  form * {
+    font-size: 28px;
+  }
+
+  .record_button3{
+    width: 65px;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+  }
+  .record_button3:hover{
+    color: red;
+  }
+  .record_button1{
+   
+    border-radius: 30px;
+    background-color: black;
+    color: #ffffff;
+  }
+  .record_button1:hover{
+    color: red;
+  }
+  .cancelBtn {
+    position: relative;
+    left: 45%;
+    margin-top: 5%;
+    width: 200px;
+    height: 60px;
+    margin: 10px;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: crimson;
+    border: none;
+  }
+
+  .cancelBtn:hover{
+    background-color: rgb(255, 0, 51)
+  }
+
+  .refreshBtn{
+    position: relative;
+    background-color: black;
+    color: #ffffff;
+    width: 200px;
+    height: 60px;
+    margin-top: 5%;
+    left: 50%;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+  }
+  .refreshBtn:hover{
+    background-color: grey;
+  }

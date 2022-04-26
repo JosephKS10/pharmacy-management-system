@@ -19,9 +19,9 @@ router.get('/',(req,res,next)=>{
 })
 
 // Read method applied here for a specific record in the supplier database
-router.get('/:id',(req,res,next)=>{
-    console.log("The id required for the particular supplier detail: "+req.params.id);
-    Supplier.findById(req.params.id)
+router.get('/:pre_name',(req,res,next)=>{
+    console.log("The pre_name required for the particular supplier detail: "+req.params.pre_name);
+    Supplier.find({pre_medicine_name:req.params.pre_name})
     .then(result=>{
         res.status(200).json({
             supplier_data_specific: result
@@ -39,7 +39,7 @@ router.get('/:id',(req,res,next)=>{
 // Supplier record creation occurs due to this post method
 router.post('/supplier_create',(req,res,next)=>{
     const supplier = new Supplier({
-    medicine_name: req.body.medicine_name,
+    pre_medicine_name: req.body.pre_medicine_name,
     supplier_name: req.body.supplier_name,
     phone_number: req.body.phone_number,
     email: req.body.email,
@@ -66,7 +66,7 @@ router.post('/supplier_create',(req,res,next)=>{
 // deleting data from the supplier database || Delete method applied here
 router.delete('/:id',(req,res,next)=>{
     console.log("The supplier id required: "+req.params.id);
-    Alternate.deleteOne({_id:req.params.id})
+    Supplier.deleteOne({_id:req.params.id})
     .then(result=>{
         res.status(200).json({
             message: "the supplier record has been deleted from the database",
@@ -86,7 +86,6 @@ router.put('/:id',(req,res,next)=>{
     console.log("The supplier id required: "+req.params.id);
     Supplier.findOneAndUpdate({_id:req.params.id}, {
         $set:{
-            medicine_name: req.body.medicine_name,
             supplier_name: req.body.supplier_name,
             phone_number: req.body.phone_number,
             email: req.body.email,

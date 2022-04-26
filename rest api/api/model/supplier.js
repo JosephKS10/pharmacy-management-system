@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const supplierSchema = new mongoose.Schema({
-    medicine_name: String,
-    supplier_name: Number,
+    pre_medicine_name: String,
+    supplier_name: String,
     phone_number: Number,
     email: String,
     address: String,

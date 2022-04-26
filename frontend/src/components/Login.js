@@ -1,40 +1,38 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import logoimg from '../img/logo.png';
 import background from '../img/background.jpg';
 import axios from 'axios' 
+import useCreateHook from './hooks/useCreateHook';
+import "./Login.css";
 
-const api = axios.create({
-  baseURL: 'http://localhost:9000/login'
-})
 
-export default class login extends Component {
-  state = {
-    username: "",
-    password: ""
+function Login() {
+
+  const api = axios.create({
+    baseURL: 'http://localhost:9000/login'
+  })
+ 
+  let navigate = useNavigate(); 
+ 
+  function login_submit(){
+
+    alert(`Login Intialized!
+          Username: ${inputs.username}
+          `);
+    api.post('/verify', {username:inputs.username, password:inputs.password })
+
+    navigate('/home');
   }
-
-  handleChange = args => (event) => {
-    console.log(event.target.value)
-    this.setState({
-      [args] : event.target.value,
-      
-    })
-  }
-
-  handleLogin = async (event) => {
-    event.preventDefault();
-    let res = await api.post('/verify', {username:this.state.username, password: this.state.password})
-    console.log(res.statusText)
-    if(res.status === 200){
-      console.log("will redirect to the other page"); 
-    }
+ 
+  const {inputs, handleInputChange, handleSubmit} = useCreateHook(login_submit);
+  
     
+  function submit(){
+    handleSubmit();
   }
 
-  render() {
-    const {username, password} = this.state;
-   
-    return (
+  return (
     <>
     {/* here the login box code begins */}
     
@@ -45,17 +43,11 @@ export default class login extends Component {
  <label className='welcome my-3'>Welcome Back, Please login to your account.</label>
  <div className="container my-3">
       <form>
-      <div className="form-group my-3">
-        <br />
-        <input name="username" type="text" className="username_details " id="exampleInputEmail1" value={username} onChange={this.handleChange('username')} placeholder="Enter the Username"/>
+        <input name="username" type="text" className="username_details " id="exampleInputEmail1" value={inputs.username} onChange={handleInputChange} placeholder="Enter the Username"/>
         
-      </div>
-      <div className="form-group my-3">
-        <input name="password" type="password" className="password_details" id="exampleInputPassword1" value={password} onChange={this.handleChange('password')} placeholder="Enter the Password"/>
-      </div>
+        <input name="password" type="password" className="password_details" id="exampleInputPassword1" value={inputs.password} onChange={handleInputChange} placeholder="Enter the Password"/>
         
-      <button className="login_button" type="submit" onClick={this.handleLogin}>Login</button>
-      
+        <button className="login_button" type="submit" onClick={submit}>Login</button> 
     </form>
  </div>  
  </div>
@@ -75,8 +67,10 @@ export default class login extends Component {
 
   {/* here the text and email button code ends*/}
     </>
-    )
-  }
+  )
 }
+
+export default Login
+
 
 

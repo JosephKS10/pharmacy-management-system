@@ -1,0 +1,118 @@
+
+  .modalContainer {
+    position: fixed;
+    width: 1000px;
+    height: 650px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 25px;
+  }
+  
+  .modalContainer .titleALT {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 6%;
+    left: 22%;
+  }
+  
+  .titleCloseBtn {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .body {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+.body_alt_view{
+  position: fixed;
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-size: xx-large;
+  left: 47%;
+}
+
+.label_text_alt{
+   position: fixed;
+   left: 30%;
+
+}
+.alt{
+  font-weight: 700;
+}
+.alt_name{
+margin-bottom: 3.5%;
+
+
+
+}
+.alt_storage{
+    margin-bottom: 3.5%;
+ 
+    
+}
+.alt_price{
+    margin-bottom: 3.5%;
+
+}
+.alt_stock{
+    margin-bottom: 3.5%;
+}
+
+.alt_manu_info{
+  margin-bottom: 3.5%;
+}
+.alt_doe{
+  margin-bottom: 3.5%;
+}
+
+
+.modalContainer .footer_alt {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 42%;
+  }
+  
+  .modalContainer .footer_alt button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }
+
+  #cancelBtn:hover{
+    background-color: rgb(255, 0, 51)
+  }
+
+  #createBtn:hover{
+    background-color: rgb(0, 85, 244)
+  }
+
+  #cancelBtn {
+    background-color: crimson;
+  }
