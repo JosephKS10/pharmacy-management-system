@@ -9,7 +9,7 @@ import Table from './Table';
 import UpdateModal from './UpdateModal';
 import SupplierViewModal from './SupplierViewModal';
 import AlternateViewModal from './AlternateViewModal';
-import useCreateHook from './hooks/useCreateHook';
+
 
 
 export default function Home() {
@@ -31,8 +31,7 @@ export default function Home() {
   const [useIDdataalternate, setuseIDdataalternate] = useState();
 
 
-
-
+  
   return (
     <>
     
@@ -40,21 +39,26 @@ export default function Home() {
 
     <div className="container_for_bar">
     <img className='home_logo' src={logoimg} alt="logo.png" />
-    <input name='medicine_name' type="search" className='search_bar' id='medicine_name' placeholder='Search Entry...'/>
+   
     <div className="button_container">
     <button className='view_button' onClick={() => {setuseViewDatabase(true)}}>View Dataset</button>
     <button className='create_button' onClick={() => {setuseOpenCreateModal(true)}}>Create Entry</button>
+
+
     {useopenCreateModal && <CreateModal closeCreateModal={setuseOpenCreateModal} proceedCreateModel={setuseProceedModal} getmedicineName={setuseMedicineName}/>} 
     {useProceedModal && <SupModal proceedSupModal={setuseproceedSupModal} closeSupModal={setuseProceedModal} putMedicineName={useMedicineName}/>}
     {useproceedSupModal && <AltModal closeAltModal={setuseproceedSupModal} putMedicineName={useMedicineName}/>}
     
     </div>
-
+    {/*  for view database this is the code */}
     {useViewDatabase && <DataFetching setUseData={setuseData} datarecieved={setusedatarecieved}/>}
 
     {usedatarecieved && useViewDatabase && 
     <Table useData={useData} setclosedatabase={setuseViewDatabase} openupdate={setuseUpdateModal} setiddata={setuseIDdata} opensupplierviewmodal={setuseSupplierViewModal} openalternate={setuseAlternateViewModal} 
     setiddatasupplier={setuseIDdatasupplier} setiddataalternate={setuseIDdataalternate}/>}
+
+    {/*  for searching database and viewing it this is the code */} 
+
 
     {useUpdateModal && <UpdateModal closeUpdateModal={setuseUpdateModal} idData={useIDdata} openviewDatabase={setuseViewDatabase}/>}
     {useSupplierViewModal && <SupplierViewModal closesupplierviewmodal={setuseSupplierViewModal} putIDdatasupplier={useIDdatasupplier} openviewdatabase={setuseViewDatabase} setiddatasupplier={setuseIDdatasupplier}/>}
